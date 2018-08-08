@@ -1,0 +1,40 @@
+<view>
+  <view class="warend_top">
+  <view style="position:absolute;left:calc( 50% - 80px);width:160px;top:30px;text-align:center;line-height:80px;font-size:12px;color:white;height:150px;z-index:10;"><image style="width:100%;height:100%;" src="{{warendimg}}"></image></view>
+    <view class="warend_top_3" style="background: url('https://yzryimg.tibosi.com/images/ui_wait_blue.png');background-repeat:no-repeat;background-size:100% 80px;">
+      <image bindtap="warend" style="width:60px;height:60px;float:right;margin-right:10px;margin-top:10px;border-radius:30px;" src="{{users.CreateImgUrl}}"></image> 
+       <text style="float:right;margin-top:10px;color:white;min-width:90%;">{{users.CreateName}}</text>
+    </view>
+
+    <view class="warend_top_3" style="background: url('https://yzryimg.tibosi.com/images/ui_wait_red.png');background-repeat:no-repeat;background-size:100% 80px;float:right;">
+      <image style="width:60px;height:60px;float:left;margin-left:10px;margin-top:10px;border-radius:30px;" src="{{users.AcceptImgUrl}}"></image>
+      <text style="float:left;margin-top:10px;color:white;min-width:90%;">{{users.AcceptName}}</text>
+    </view>
+
+    <view style="height:90px;background-color:#e860b2;float:left;width:100%;margin-top:10px;">
+    <view style="background-color: #49c9ff;height:100%;border-bottom-right-radius:45px;border-top-right-radius:45px;text-align:left;float:left;line-height:90px;font-size:30px;" class="{{createInfo.IsTie==1?'drawprogress':(createInfo.IsWin==0?'loseprogress':'winprogress')}}"><text style="margin-left:20px;color:white;">{{createInfo.TotalScore}}</text></view>
+    <view class="{{createInfo.IsTie==1?'drawprogress':(createInfo.IsWin==0?'winprogress':'loseprogress')}}" style="height:100%;float:right;width:39%;text-align:right;line-height:90px;font-size:30px;"><text style="margin-right:20px;color:white;">{{accpetInfo.TotalScore}}</text></view>
+    </view>
+  </view>
+
+
+
+  <view class="{{role==='Create'?(createInfo.IsWin==0?'hidden':''):(accpetInfo.IsWin==0?'hidden':'')}}" style="text-align:center;color:white;margin-top:20px;position:relative;">
+    <image style="width:18px;height:18px;vertical-align: middle;" src="https://yzryimg.tibosi.com/images/icon_battle_friendcount.png"></image>
+    <text style="line-height:20px;vertical-align: middle;margin-left:5px;">战胜好友数 X 1</text>
+  </view>
+
+  <view class="{{role==='Create'?(createInfo.IsWin==0?'hidden':''):(accpetInfo.IsWin==0?'hidden':'')}}" style="text-align:center;color:white;margin-top:20px;position:relative">
+    <image style="width:18px;height:18px;vertical-align: middle;" src="https://yzryimg.tibosi.com/images/icon_battle_wincount.png"></image>
+    <text style="line-height:20px;vertical-align: middle;margin-left:5px;">胜利场数 X 1</text>
+  </view>
+
+  <view style="text-align:center;color:white;margin-top:20px;">
+    <button hidden="{{selecter!=''}}" bindtap='review' style='width:120px;background-color:#7dc712;color:white;'>{{role==='Create'?(createInfo.IsWin==0?'亡羊补牢':'精彩回顾'):(accpetInfo.IsWin==0?'亡羊补牢':'精彩回顾')}}</button>
+
+    <button hidden="{{selecter!=''}}" bindtap='waragain' style='width:250px;color:#394fb4;margin-top:20px;'>继续怼TA</button>
+    <!-- <button bindtap='waitwar' open-type='share' style='width:250px;background-color:#ff4672;color:white;margin-top:5px;'>换个好友怼</button> -->
+    <button hidden="{{selecter!=''}}" open-type='share' style='width:250px;background-color:#f3a500;color:white;margin-top:5px;'>炫耀成绩</button>
+    <button bindtap='gohome' style='width:250px;background-color:#ff4672;color:white;margin-top:5px;'>返回首页</button>
+  </view>
+</view>

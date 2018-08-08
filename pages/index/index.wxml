@@ -1,0 +1,12 @@
+<view>
+  <view class='row share'>
+    <image src='https://yzryimg.tibosi.com/images/icon_share.png'></image>
+  </view>
+
+  <view class='row'>
+  <image class='userImg' style='' bindtap="waitwar"></image>
+  </view>
+
+
+</view>
+

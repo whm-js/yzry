@@ -1,0 +1,22 @@
+<block wx:for="{{List}}" wx:for-index="index">
+  <view class="weui_cell">
+      <view class="weui_cell_bd">
+      <view class="weui_cell_bd_p"> {{index+1}} </view>
+    </view>
+    <view class="weui_cell_hd">
+      <image src="{{item.srcURL}}"></image>
+    </view>
+    <view class="weui_cell_bd">
+      <view class="weui_cell_bd_p"> {{item.UserName}} </view>
+    </view>
+    <view class="weui_cell_bd">
+      <view class="weui_cell_bd_p"> {{item.UserName}} </view>
+    </view>
+    <view class="weui_cell_bd">
+      <view class="weui_cell_bd_p"> {{item.UserName}} </view>
+    </view>
+
+    <!-- <view class="badge">{{item.UserName}}</view> -->
+    <!-- <view class="with_arrow"></view> -->
+  </view>
+</block>

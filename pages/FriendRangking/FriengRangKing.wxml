@@ -1,0 +1,162 @@
+<!--pages/FriendRangking/FriengRangKing.wxml-->
+
+<view class='page'>
+  <view class='hot_top'>
+    <!-- <view class='back'bindtap="Hindex">〈  好友排行</view>  -->
+    <view class='top_font'></view>
+    <view class='font_ff'>
+      <text class='font_ffff'>胜场</text>
+      <text class='font_fff'>胜率</text>
+    </view>
+    <!--前3名高亮显示-->
+    <view class='lb1'>
+      <view class='lb-t1'>
+
+        <image class='ico' src='https://yzryimg.tibosi.com/images/icon_gold.png'> </image>
+      </view>
+      <image class='userimg' src="{{list[0].handImagUrl}}"> </image>
+      <view class='username'>{{list[0].nick}}</view>
+      <view class='wcount'>
+        <image class='wincountimg' src='https://yzryimg.tibosi.com/images/icon_trophy.png'> </image>
+        <view class='wcontsize'>X{{list[0].winCount}}</view>
+      </view>
+      <view class='spp'>
+        <image class='wincounting' src='https://yzryimg.tibosi.com/images/icon_sp.png'> </image>
+        <view class='wcontsize'>{{list[0].sp}}</view>
+      </view>
+    </view>
+
+    <view class='lb2'>
+      <view class='lb-t2'>
+
+        <image class='icoo' src='https://yzryimg.tibosi.com/images/icon_silver.png'> </image>
+      </view>
+      <image class='userimg' src="{{list[1].handImagUrl}}"> </image>
+      <view class='username'>{{list[1].nick}}</view>
+      <view class='wcount'>
+        <image class='wincountimg' src='https://yzryimg.tibosi.com/images/icon_trophy.png'> </image>
+        <view class='wcontsize'>X{{list[1].winCount}}</view>
+      </view>
+      <view class='spp'>
+        <image class='wincounting' src='https://yzryimg.tibosi.com/images/icon_sp.png'> </image>
+        <view class='wcontsize'>{{list[1].sp}}</view>
+      </view>
+    </view>
+
+    <view class='lb3'>
+      <view class='lb-t3'>
+
+        <image class='icoo' src='https://yzryimg.tibosi.com/images/icon_copper.png'> </image>
+      </view>
+      <image class='userimg' src="{{list[2].handImagUrl}}"> </image>
+      <view class='username'>{{list[2].nick}}</view>
+      <view class='wcount'>
+        <image class='wincountimg' src='https://yzryimg.tibosi.com/images/icon_trophy.png'> </image>
+        <view class='wcontsize'> X{{list[2].winCount}}</view>
+      </view>
+      <view class='spp'>
+        <image class='wincounting' src='https://yzryimg.tibosi.com/images/icon_sp.png'> </image>
+        <view class='wcontsize'>{{list[2].sp}}</view>
+      </view>
+    </view>
+    <!--动态加载表格  -->
+    <block wx:for="{{list}}" wx:key="{{}}" wx:for-index="index" wx:for-item="item">
+      <view wx:if="{{ index > 2}}">
+        <view class='lb'>
+          <view class='lb-t'>
+            <view class='ico1'>{{index+1}}</view>
+          </view>
+          <image class='userimg' src="{{item.handImagUrl}}"> </image>
+          <view class='username'>{{item.nick}}</view>
+          <view class='wcount'>
+            <image class='wincountimg' src='https://yzryimg.tibosi.com/images/icon_trophy.png'> </image>
+            <view class='wcontsize'> X{{item.winCount}}</view>
+          </view>
+          <view class='spp'>
+            <image class='wincounting' src='https://yzryimg.tibosi.com/images/icon_sp.png'> </image>
+            <view class='wcontsize'>{{item.sp}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!--底部显示本人排行  -->
+    <view class='botV1'>
+      <!--判断是否为第一名  -->
+      <view wx:if="{{userlist.place==1}}">
+        <view class='lb11'>
+          <view class='lb-t11'>
+            <!-- <view class='ico11'>{{userlist.place}}</view> -->
+            <image class='ico' src='https://yzryimg.tibosi.com/images/icon_gold.png'> </image>
+          </view>
+          <image class='userimg2' src="{{userlist.handImagUrl}}"> </image>
+          <view class='username'>{{userlist.nick}}</view>
+          <view class='wcount2'>
+            <image class='wincountimg1' src='https://yzryimg.tibosi.com/images/icon_trophy.png'> </image>
+            <view class='wcontsize'> X{{userlist.winCount}}</view>
+          </view>
+          <view class='spp2'>
+            <image class='wincounting1' src='https://yzryimg.tibosi.com/images/icon_sp.png'> </image>
+            <view class='wcontsize'>{{userlist.sp}}</view>
+          </view>
+        </view>
+      </view>
+      <!--判断是否为第二名 -->
+      <view wx:elif="{{userlist.place==2}}">
+        <view class='lb22'>
+      <view class='lb-t22'>
+
+        <image class='icoo' src='https://yzryimg.tibosi.com/images/icon_silver.png'> </image>
+      </view>
+      <image class='userimg2' src="{{userlist.handImagUrl}}"> </image>
+      <view class='username'>{{userlist.nick}}</view>
+      <view class='wcount2'>
+        <image class='wincountimg1' src='https://yzryimg.tibosi.com/images/icon_trophy.png'> </image>
+        <view class='wcontsize'>X{{userlist.winCount}}</view>
+      </view>
+      <view class='spp2'>
+        <image class='wincounting1' src='https://yzryimg.tibosi.com/images/icon_sp.png'> </image>
+        <view class='wcontsize'>{{userlist.sp}}</view>
+      </view>
+    </view>
+      </view>
+      <!--判断是否为第三名  -->
+       <view wx:elif="{{userlist.place==3}}">
+        <view class='lb33'>
+          <view class='lb-t33'>
+            <image class='icoo' src='https://yzryimg.tibosi.com/images/icon_copper.png'> </image>
+          </view>
+          <image class='userimg2' src="{{userlist.handImagUrl}}"> </image>
+          <view class='username'>{{userlist.nick}}</view>
+          <view class='wcount2'>
+            <image class='wincountimg1' src='https://yzryimg.tibosi.com/images/icon_silver.png'> </image>
+            <view class='wcontsize'> X{{userlist.winCount}}</view>
+          </view>
+          <view class='spp2'>
+            <image class='wincounting1' src='https://yzryimg.tibosi.com/images/icon_sp.png'> </image>
+            <view class='wcontsize'>{{userlist.sp}}</view>
+          </view>
+        </view>
+      </view>
+<!--用户再第四名之后  -->
+   <view wx:else>
+        <view class='lbN'>
+          <view class='lb-tN'>
+             <view class='ico11'>{{userlist.place}}</view> 
+          </view>
+          <image class='userimg2' src="{{userlist.handImagUrl}}"> </image>
+          <view class='username'>{{userlist.nick}}</view>
+          <view class='wcount2'>
+            <image class='wincountimg' src='https://yzryimg.tibosi.com/images/icon_trophy.png'> </image>
+            <view class='wcontsize'> X{{userlist.winCount}}</view>
+          </view>
+          <view class='spp2'>
+            <image class='wincounting' src='https://yzryimg.tibosi.com/images/icon_sp.png'> </image>
+            <view class='wcontsize'>{{userlist.sp}}</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

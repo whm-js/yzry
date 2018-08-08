@@ -1,0 +1,137 @@
+<view>
+  <view class='test-read'>
+    <view class="user-box">
+      <view class="item1">
+        <view  style='margin-left:5px;margin-rightt:5px;'>
+          <image class="user-img" mode="aspectFit" src='{{myImg}}' style='border-radius:50%;height:50px;width:50px;padding:0;vertical-align:middle'></image>
+        </view>
+        <view>
+          <view class='user-name'>{{myName}}</view>
+          <view class="user-score">{{myScore == -1 ? "" :myScore}}</view>
+        </view>
+      </view>
+
+      <view class="item2">
+        <view class="soft-box">
+          <view class='test-current'>第{{currentTab + 1}}题</view>
+          <view class='soft-name'>{{softName[currentTab]}}</view>
+        </view>
+      </view>
+
+      <view class="item3">
+        <view>
+          <view class='user-name' style='text-align:right'>{{heName}}</view>
+          <view class="user-score" style='padding-left:5px;text-align:right;'>{{heScore == -1 ? "" :heScore}}</view>
+        </view>
+        <view  style='margin-left:5px;margin-right:10px;'>
+          <image class="user-img" mode="aspectFit" src='{{heImg}}' style='border-radius:50%;height:50px;width:50px;padding:0;vertical-align:middle'></image>
+        </view>
+      </view>
+    </view>
+
+
+    <view class='swiper-box'>
+      <view>
+        <image bindtap="swichNav" mode="aspectFit" data-name='prve' class='arrow-left' src='https://yzryimg.tibosi.com/images/ui_battle_arrow_left.png'></image>
+      </view>
+
+      <swiper current="{{currentTab}}" bindchange="bindchange" style="width:100%;height: {{testHeight+'px'}}">
+
+        <block wx:for='{{testArray}}' wx:for-item="item" wx:key='{{}}'>
+
+          <!-- <swiper-item catchtouchmove='{{pageDivision == "jingcaihuigu" ? "" : "catchTouchMove"}}'> -->
+          <swiper-item>
+            <view class="test-swiper-item">
+
+              <view class="test-box">
+
+                <view class='test-title'>{{item.title}}</view>
+
+                <block wx:for='{{item.itemArray}}' wx:for-item="itemArray" wx:for-index="arrayIndex" wx:key='{{}}'>
+
+                  <!--这个选项我答了  最外层要么对 要么错  -->
+                  <view wx:if="{{arrayIndex == item.user && item.userRight != '' }}" class='{{item.userRight == "true" ? "success" : "my-error"}}'>
+                    <view>
+                      <image src='{{item.userRight == "true" ? ui_battle_right : ui_battle_wrong }}'></image>
+                    </view>
+                    <view class="test-content">{{itemArray}}</view>
+                    <!-- 对方 是否回答了 -->
+                    <view wx:if='{{arrayIndex == item.he}}'>
+                      <image src='{{item.heRight == "true" ? ui_battle_right : ui_battle_wrong }}'></image>
+                    </view>
+                    <view wx:else>
+                      <image src='{{ui_battle_kong}}'></image>
+                    </view>
+
+                  </view>
+
+                  <!-- 这个选项对方肯定答了  我肯定没有答  如果我答了 就会进入上面那个条件-->
+                  <view wx:elif="{{arrayIndex == item.he  && item.heRight != ''}}" class='{{item.heRight == "true" ? "success" : "ta-error"}}'>
+                    <view>
+                      <image src='{{ui_battle_kong}}'></image>
+                    </view>
+                    <view class="test-content">{{itemArray}}</view>
+                    <view>
+                      <image src='{{item.heRight == "true" ? ui_battle_right : ui_battle_wrong}}'></image>
+                    </view>
+                  </view>
+
+                  <!--空选项-->
+                  <view wx:else class='{{item.answer == arrayIndex ? "success" : "defult"}}'>
+                    <view>
+                      <image src='{{ui_battle_kong}}'></image>
+                    </view>
+                    <view class="test-content">{{itemArray}}</view>
+                    <view>
+                      <image src='{{ui_battle_kong}}'></image>
+                    </view>
+                  </view>
+
+                </block>
+
+              </view>
+
+            </view>
+          </swiper-item>
+
+        </block>
+
+
+      </swiper>
+
+      <view >
+        <image bindtap="swichNav" mode="aspectFit" class="arrow-right" data-name='next' src='https://yzryimg.tibosi.com/images/ui_battle_arrow_right.png'></image>
+      </view>
+    </view>
+
+    <swiper current="{{currentTab}}" style="width:100%;height: {{explainHeight+'px'}}">
+
+      <block wx:for='{{testArray}}' wx:for-item="item" wx:key='{{}}'>
+        <swiper-item catchtouchmove='catchTouchMove'>
+          <view class="explain-swiper-item">
+            <view class='explain-content'>
+              <text style="color:#394FB4">解析：</text>
+              <text style='color:#9A9A9A'>{{item.explain}}</text>
+            </view>
+
+            <button  open-type='share'  class="help" style='background:#394FB4;color:#fff'>求助好友</button>
+
+          
+
+          </view>
+        </swiper-item>
+
+
+
+      </block>
+
+
+    </swiper>
+
+
+
+
+  </view>
+
+
+</view>

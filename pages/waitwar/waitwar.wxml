@@ -1,0 +1,41 @@
+<view>
+  <view class="waitwar_top">
+    <view class="waitwar_top_3" style="background: url('https://yzryimg.tibosi.com/images/ui_wait_blue.png');background-repeat:no-repeat;background-size:100% 80px;">
+       <image bindtap="warend" style="width:60px;height:60px;float:right;margin-right:10px;margin-top:10px;border-radius:30px;" src="{{role==='Create'?userInfo.avatarUrl:users.CreateImgUrl}}"></image> 
+       <text style="float:right;margin-top:10px;color:white;min-width:90%;">{{role==='Create'?userInfo.nickName:users.CreateName}}</text>
+      <!-- <view class="userinfo">
+        <view class="userinfo-avatar">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+      </view> -->
+      <!-- <open-data style="float:right;margin-top:10px;color:white;" type="userNickName"></open-data> -->
+
+    </view>
+    <view class="waitwar_top_3" style="text-align:center;line-height:80px;font-size:12px;color:white;">{{role==='Create'?(opponentinfo===''?'等待好友加入...':'好友已加入对战'):(users===''?'好友已退出对战':'好友已加入对战')}}</view>
+    <view class="waitwar_top_3" style="background: url('https://yzryimg.tibosi.com/images/ui_wait_red.png');background-repeat:no-repeat;background-size:100% 80px;">
+      <image bindtap="opponentIn" style="width:60px;height:60px;float:left;margin-left:10px;margin-top:10px;border-radius:30px;" src="{{role==='Create'?opponentinfo.avatarUrl:userInfo.avatarUrl}}"></image>
+      <text style="float:left;margin-top:10px;color:white;min-width:90%;">{{role==='Create'?opponentinfo.nickName:userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view style="text-align:center;color:white;margin-top:20px;position:relative">
+    <image style="width:18px;height:18px;vertical-align: middle;" src="https://yzryimg.tibosi.com/images/icon_clock.png"></image>
+    <text style="line-height:20px;vertical-align: middle;margin-left:5px;">{{clock}}</text>
+  </view>
+
+  <view style="text-align:center;color:white;margin-top:50px;">共
+    <text style="color:#d6d846;">5</text>题
+  </view>
+  <view style="text-align:center;color:white;margin-top:10px;">每题
+    <text style="color:#d6d846;">20</text>秒答题时间
+  </view>
+  <view style="text-align:center;color:white;margin-top:10px;">回答正确，且用时越短，得分越高
+  </view>
+
+  <view style="text-align:center;color:white;margin-top:40px;">
+    <!-- <image style="width:100px;height:100px;" bindtap="warend" src="https://yzryimg.tibosi.com/images/btn_giveup.png"></image> -->
+    <button hidden="{{(role=='Create'&&opponentinfo!=='')||(role=='Accept'&&clock=='该对战已过期')||(clock==='该对战已过期')}}" bindtap="quitwar" style='width:120px;background-color:#7dc712;color:white;'>放弃</button>
+    <button hidden="{{(role=='Accept')||(opponentinfo=='')||(clock==='该对战已过期')}}" bindtap="beginwar" style='width:120px;background-color:#7dc712;color:white;margin-top:20px;'>开始对战</button>
+    <button open-type="share" hidden="{{(role=='Create'&&opponentinfo!=='')||role==='Accept'||(clock==='该对战已过期')}}" style='width:120px;background-color:#7dc712;color:white;margin-top:20px;'>邀请</button>
+     <button hidden="{{(role=='Create'&&clock!=='该对战已过期')||(role=='Accept'&&clock!=='该对战已过期')}}" bindtap="quitwar" style='width:120px;background-color:#7dc712;color:white;margin-top:20px;'>退出</button> 
+  </view>
+</view>

@@ -1,0 +1,101 @@
+<view>
+  <view class="user-box">
+
+    <view class="item1" style='  display: flex;  justify-content: center;  align-items: center;'>
+      <view>
+        <image class="user-img" mode="aspectFit" src='{{myImg}}' style='border-radius:50%;height:50px;width:50px;padding:0;vertical-align:middle'></image>
+      </view>
+      <view>
+        <view class='user-name' style='text-center:left'>{{myName}}</view>
+        <view class="user-score">{{myScore == -1 ? "" :myScore}}</view>
+      </view>
+    </view>
+
+    <view class="item2">
+      <view class="ss">
+        <canvas canvas-id="canvasArc" style='width:60px;height:60px;margin-left:-30px;left:50%;top:50%;margin-top:-30px;position:absolute;'>
+        </canvas>
+        <view class="test-time">{{testTimeshow}}</view>
+      </view>
+    </view>
+
+    <view class="item3" style='  display: flex;  justify-content: center;  align-items: center;'>
+      <view>
+        <view class='user-name'>{{heName}}</view>
+        <view class="user-score">{{heScore == -1 ? "" :heScore}}</view>
+      </view>
+      <view>
+        <image class="user-img" mode="aspectFit" src='{{heImg}}' style='border-radius:50%;height:50px;width:50px;padding:0;vertical-align:middle'></image>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="soft-box  {{softTestShow}}">
+    <view class='test-current'>第{{testCurrent}}题</view>
+    <view class='soft-name'>{{softName}}</view>
+  </view>
+
+
+  <view style='margin-top:30px' class='{{shuangbei}}'>
+    <image src='https://yzryimg.tibosi.com/images/shuangbei.png' mode="aspectFit" style="width: 180px;height: 115px;"></image>
+  </view>
+
+
+  <view class="test-box {{testTitleShow}}">
+
+    <block wx:for='{{testInfo}}' wx:for-item="item"  wx:key="{{}}" >
+
+      <view class='test-title {{testTitleShow}}'>{{item.title}}</view>
+
+      <view class=' {{testItemShow}}'>
+
+        <block wx:for='{{item.itemArray}}' wx:for-item="itemArray"  wx:key="{{}}"  wx:for-index="arrayIndex">
+
+          <!--这个选项我答了  最外层要么对 要么错  -->
+          <view wx:if="{{arrayIndex == item.user && item.userRight != '' }}" data-index="{{testChar[arrayIndex]}}" class='{{item.userRight == "true" ? "success" : "my-error"}}' bindtap='seleteItem'>
+            <view>
+              <image src='{{item.userRight == "true" ? ui_battle_right : ui_battle_wrong }}'></image>
+            </view>
+            <view class="test-content">{{itemArray}}</view>
+            <!-- 对方 是否回答了 -->
+            <view wx:if='{{arrayIndex == item.he}}'>
+              <image src='{{item.heRight == "true" ? ui_battle_right : ui_battle_wrong }}'></image>
+            </view>
+            <view wx:else>
+              <image src='{{ui_battle_kong}}'></image>
+            </view>
+
+          </view>
+
+          <!-- 这个选项对方肯定答了  我肯定没有答  如果我答了 就会进入上面那个条件-->
+          <view wx:elif="{{arrayIndex == item.he  && item.heRight != ''}}" data-index="{{testChar[arrayIndex]}}" class='{{item.heRight == "true" ? "success" : "ta-error"}}' bindtap='seleteItem'>
+            <view>
+              <image src='{{ui_battle_kong}}'></image>
+            </view>
+            <view class="test-content">{{itemArray}}</view>
+            <view>
+              <image src='{{item.heRight == "true" ? ui_battle_right : ui_battle_wrong}}'></image>
+            </view>
+          </view>
+
+          <!--空选项-->
+          <view wx:else class='{{item.answer == arrayIndex ? "success" : "defult"}}' data-index="{{testChar[arrayIndex]}}" bindtap='seleteItem'>
+            <view>
+              <image src='{{ui_battle_kong}}'></image>
+            </view>
+            <view class="test-content">{{itemArray}}</view>
+            <view>
+              <image src='{{ui_battle_kong}}'></image>
+            </view>
+          </view>
+
+        </block>
+      </view>
+
+    </block>
+  </view>
+
+
+
+</view>

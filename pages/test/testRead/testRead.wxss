@@ -1,0 +1,214 @@
+.test-read {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* background: url('https://yzryimg.tibosi.com/images/bg_invitation.jpg');
+  background-size: cover; */
+}
+
+.user-box {
+  padding-top: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center; /*垂直居中*/
+  justify-content: center; /*水平居中*/
+  background: #394fb4;
+}
+
+.item1 {
+  height: 80px;
+  background: url('https://yzryimg.tibosi.com/images/ui_wait_blue.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name {
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  clear: both;
+  width:60px;
+  text-align: left;
+}
+
+.user-score {
+  color: #fff;
+  font-weight: bold;
+  height:40px;
+line-height:40px;
+text-align:left;  
+}
+
+.item2 {
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+  height: 80px; 
+}
+
+.soft-box {
+  clear: both;
+  width: 100%;
+  height: 100%;
+  background: url('https://yzryimg.tibosi.com/images/ui_arrow.png');
+  background-repeat: no-repeat;
+  text-align: center;
+  background-size: 100% 100%;
+  margin: auto;
+}
+
+.item3 {
+  height: 80px;
+  background: url('https://yzryimg.tibosi.com/images/ui_wait_red.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: top left;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-img {
+  width: 100rpx;
+  height: 100rpx;
+  padding: 17px 5px;
+  border-radius:50%;
+
+}
+
+.test-current {
+  color: #fff;
+  font-size: 24rpx;
+  padding-top: 40rpx;
+  text-align: center;
+}
+
+.soft-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  color: #fff;
+  width:55px;
+font-size:16px;
+margin:auto;
+
+}
+
+.swiper-box {
+  display: flex;
+  align-items: center; /*垂直居中*/
+  justify-content: space-around; /*水平居中*/
+  background: #394fb4;
+  padding: 0 10px;
+}
+
+.test-box {
+  padding: 30px 10px 10px 15px;
+  background: #394fb4;
+}
+
+.test-title {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.arrow-left {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.arrow-right {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.success {
+  background: #41ee93;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-radius: 5px;
+  padding: 5px; 
+
+}
+
+.my-error {
+  background: #49c9ff;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-radius: 5px;
+  padding: 5px; 
+}
+
+.ta-error {
+  background: #ff4672;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.defult{
+  background: #fff;
+  color: #394FB4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.ta-error image, .my-error image, .success image, .defult image {
+  height: 20px;
+  width: 20px;
+  padding: 0 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.explain-swiper-item {
+  margin-bottom: 30px;
+}
+
+.explain-content {
+  margin: 15px 15px 30px 15px;
+  font-size: 16px;
+  text-align:left;
+
+}
+
+.help {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.test-content{
+  padding:10px 0;
+
+}

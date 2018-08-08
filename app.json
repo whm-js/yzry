@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/authorize/index",
+    "pages/index/index",
+    "pages/waitwar/waitwar",
+    "pages/test/testHelp/testHelp",
+    "pages/test/testRead/testRead",
+    "pages/radar/index",
+    "pages/warend/warend",
+    "pages/rank/rank",
+    "pages/FriendRangking/FriengRangKing",
+    "pages/test/doExam/doExam"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#eee",
+    "navigationBarBackgroundColor": "#0F1525",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "英腾医学王者"
+  }
+}

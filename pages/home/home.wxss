@@ -1,0 +1,280 @@
+page {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background: url('https://yzryimg.tibosi.com/images/bg_index.jpg');
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "iconfont";
+  src: url('https://yzryimg.tibosi.comfont//DFPHaiBaoW12.eot?t=1484311526877'); /* IE9*/
+  src: url('https://yzryimg.tibosi.com/font/DFPHaiBaoW12.eot?t=1484311526877#iefix') format('embedded-opentype'),
+         /* IE6-IE8 */ url('https://yzryimg.tibosi.com/font/DFPHaiBaoW12.woff?t=1484311526877') format('woff'),
+         /* chrome,
+         firefox */ url('https://yzryimg.tibosi.com/font/DFPHaiBaoW12.ttf?t=1484311526877') format('truetype'),
+         /* chrome,
+         firefox,
+         opera,
+         Safari,
+         Android,
+         iOS 4.2+*/ url('https://yzryimg.tibosi.com/font/DFPHaiBaoW12.svg?t=1484311526877#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  color: rgb(111, 39, 1);
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+view {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.fx {
+  width: 3rem;
+  height: 3rem;
+  margin: 15px;
+  justify-content: flex-end;
+}
+
+.userimg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 106rpx;
+}
+
+.hot {
+  width: 54px;
+  height: 56px;
+  z-index: 5;
+  position: absolute;
+  margin-top: 0.8rem;
+  display: none;
+}
+
+.userpk {
+  width: 10rem;
+  height: 3rem;
+  margin-top: 15px;
+}
+
+.listBig {
+  border-style: solid;
+  /* border-width: 5px; *//* border-color: rgb(73, 38, 13); */
+  left: 3px;
+  top: 3px;
+  z-index: 2;
+  width: 98%;
+  border-radius: 10px;
+}
+
+.list {
+  border-style: solid;
+  border-width: 5px;
+  border-color: #f1d138;
+  background-color: rgb(240, 225, 173);
+  left: 3px;
+  top: 3px;
+  z-index: 2;
+  width: 98%;
+  border-radius: 10px;
+  -webkit-box-shadow: #ccc 0px 10px 10px inset;
+  -moz-box-shadow: #ccc 0px 10px 10px inset;
+  box-shadow: #ccc 0px 10px 10px inset;
+}
+
+.ico {
+  width: 116px;
+  height: 30px;
+  position: absolute;
+  z-index: 99;
+}
+
+.oneimg {
+  width: 33px;
+  height: 45px;
+  margin: 5px;
+  margin-top: 7px;
+}
+
+.twoimg {
+  width: 23px;
+  height: 30px;
+  margin: 10px;
+}
+
+.li {
+  width: 96%;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: 2%;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.boxShadow {
+  justify-content: center;
+  display: inline-flex;
+  border-radius: 8px;
+  box-shadow: 0 3px 0 #b8860b;
+}
+
+.oneli {
+  line-height: 60px;
+  /* background: #f1d138; */
+}
+
+.twoli {
+  line-height: 50px;
+}
+
+.threeli {
+  height: 230px;
+  line-height: 230px;
+  text-align: center;
+}
+
+.lookall {
+  width: 10rem;
+  height: 3rem;
+}
+
+.fx-zx {
+  position: fixed;
+  width: 141rpx;
+  height: 96rpx;
+  right: 40rpx;
+  z-index: 2;
+}
+
+.fx-zx button {
+  width: 180rpx;
+  height: 134rpx;
+  border: none;
+  padding: 0;
+}
+
+.fx-zx image {
+  width: 100rpx;
+  height: 96rpx;
+  background-size: 100%;
+}
+
+.userinfo {
+  position: relative;
+  width: 750rpx;
+  height: 330rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 106rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.userinfo text {
+  /* color: #fff; */
+  font-size: 14px;
+  background-color: #c0c0c0;
+  border-radius: 40%;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.ltext {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+}
+
+.WinCount {
+  background: url('https://yzryimg.tibosi.com/images/icon_trophy.png') no-repeat left 10px;
+  background-size: 1.5rem;
+  text-align: left;
+  padding-left: 30px;
+  margin-left: 15px;
+}
+
+.WinCount2 {
+  background: url('https://yzryimg.tibosi.com/images/icon_trophy.png') no-repeat left 5px;
+  background-size: 1.5rem;
+  text-align: left;
+  padding-left: 30px;
+  margin-left: 15px;
+}
+
+.WinCount3 {
+  text-align: left;
+  padding-left: 40px;
+}
+
+.nonum {
+  position: absolute;
+  color: red;
+  background: #f1d138;
+  font-size: 14px;
+  padding: 0.1rem 1rem;
+  border-radius: 5px;
+  bottom: 0px;
+  margin-bottom: 25px;
+  display: none;
+}
+
+.listImg {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: relative;
+  float: left;
+  margin: 10px 5px;
+}
+
+.listImg2 {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  float: left;
+  margin: 10px 5px 10px 10px;
+}
+
+.listUName {
+  width: 150%;
+  text-align: left;
+  text-indent: 5px;
+  word-break: keep-all; /* 不换行 */
+  white-space: nowrap; /* 不换行 */
+  vertical-align: middle; /*把此元素放置在父元素的中部。*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titleImgV {
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+}
+
+.pkV {
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  display: none;
+}

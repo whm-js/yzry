@@ -1,0 +1,97 @@
+<view wx:if="{{myuserid!=null}}">
+  <view>
+    <view class='fx-zx'>
+      <button open-type='contact' plain='{{plain}}' class='share' open-type='share' hover-class='other-button-hover'>
+        <image class='fx' src='https://yzryimg.tibosi.com/images/icon_share.png'></image>
+      </button>
+    </view>
+  </view>
+
+  <view class='titleImgV'>
+    <!-- <image class='userimg' src='{{userIMGURL}}'> </image> -->
+    <view class="userinfo">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName" style="margin-top:3px;"></open-data>
+    </view>
+    <image class='hot' wx:if="{{myInfo.place==1}}" style='display:block;' src='https://yzryimg.tibosi.com/images/icon_crown.png'></image>
+    <text class='iconfont nonum' wx:if="{{list.length>0}}" style="display:block;">NO.{{myInfo.place}}</text>
+  </view>
+
+
+  <view class='pkV' wx:if="{{list.length>0}}" style='display: inline-flex;'>
+    <button open-type="share" plain="true" style='border: none;' id='pk'>
+      <image class='userpk' src='https://yzryimg.tibosi.com/images/btn_battle.png'></image>
+    </button>
+  </view>
+
+
+  <view class='row listBig' style="display:flex; justify-content:center;">
+    <image class='ico' src='https://yzryimg.tibosi.com/images/font_friendlist.png'></image>
+    <view class='row list'>
+      <view wx:if="{{list.length>0}}" class='li iconfont' style='justify-content:center;display:inline-flex;margin-top:30px;'>
+        <view style='width:15%;'>
+          <image class='twoimg' style='height:2px;'></image>
+        </view>
+        <view style='text-index:40px;'>昵称</view>
+        <view>胜场</view>
+        <view style='text-indent:-15px;'>胜率</view>
+      </view>
+      <view wx:if="{{list.length>0}}" class='li iconfont oneli' style='justify-content:center;display:inline-flex;'>
+        <view style='background:rgb(240, 225, 173);width:15%;height:60px;'>
+          <image class='oneimg' src='https://yzryimg.tibosi.com/images/icon_gold.png'></image>
+        </view>
+        <view class='boxShadow' style='background:#f1d138;'>
+          <view class='listUName'>
+            <image src="{{list[0].handImagUrl}}" class='listImg'></image>
+            {{list[0].nick||'-'}}
+          </view>
+          <view class='WinCount' wx:if="{{list[0].winCount>=0}}">x{{list[0].winCount}}</view>
+          <view class='WinCount3' wx:else>-</view>
+          <view style='text-align:left;'>{{list[0].sp||'-'}}</view>
+        </view>
+      </view>
+      <view wx:if="{{list.length>0}}" class='li iconfont twoli' style='justify-content:center;display:inline-flex;margin-top:5px;'>
+        <view style='background:rgb(240, 225, 173);width:15%;height:50px;'>
+          <image class='twoimg' src='https://yzryimg.tibosi.com/images/icon_silver.png'></image>
+        </view>
+        <view class='boxShadow' style="background: #cbcedf;">
+          <view class='listUName'>
+            <image src="{{list[1].handImagUrl}}" class='listImg2'></image>
+            {{list[1].nick||'-'}}
+          </view>
+          <view class='WinCount2' wx:if="{{list[1].winCount>=0}}">x{{list[1].winCount}}</view>
+          <view class='WinCount3' wx:else>-</view>
+          <view style='text-align:left;'>{{list[1].sp||'-'}}</view>
+        </view>
+      </view>
+      <view wx:if="{{list.length>0}}" class='li iconfont twoli' style='justify-content:center;display:inline-flex;'>
+        <view style='background:rgb(240, 225, 173);width:15%;height:50px;'>
+          <image class='twoimg' src='https://yzryimg.tibosi.com/images/icon_copper.png'></image>
+        </view>
+        <view class='boxShadow' style=" background: #c3aaa9;">
+          <view class='listUName'>
+            <image src="{{list[2].handImagUrl}}" class='listImg2'></image>
+            {{list[2].nick||'-'}}
+          </view>
+          <view class='WinCount2' wx:if="{{list[2].winCount>=0}}">x{{list[2].winCount}}</view>
+          <view class='WinCount3' wx:else>-</view>
+          <view style='text-align:left;'>{{list[2].sp||'-'}}</view>
+        </view>
+      </view>
+      <view wx:else class='iconfont threeli'>
+        暂无好友排行，快去邀请好友一起来玩
+      </view>
+    </view>
+
+  </view>
+
+  <view class='row' style="display:flex; justify-content:center;margin-top:10px;">
+    <image wx:if="{{list.length>0}}" class='lookall' src='https://yzryimg.tibosi.com/images/btn_showlist.png' bindtap="FdRaind"></image>
+    <button wx:else open-type="share" plain="true" id='pk2'>
+      <image class='lookall' src='https://yzryimg.tibosi.com/images/btn_invitation.png'></image>
+    </button>
+  </view>
+</view>
+<view wx:else></view>
